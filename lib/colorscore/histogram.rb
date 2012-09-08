@@ -7,7 +7,7 @@ module Colorscore
 
     # Returns an array of colors in descending order of occurances.
     def colors
-      hex_values = @lines.map { |line| line[/#[0-9A-F]+/] }
+      hex_values = @lines.map { |line| line[/#[0-9A-F]{6}+/] }
       hex_values.map { |hex| Color::RGB.from_html(*hex) }
     end
 
